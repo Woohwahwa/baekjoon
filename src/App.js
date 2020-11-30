@@ -1,5 +1,4 @@
 import './App.css';
-import './components/1002'
 
 function App() {
   return (
