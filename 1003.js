@@ -4,12 +4,26 @@
 */
 
 /* 풀이 */
-//::TODO 첫째 줄에 테스트 케이스의 개수 T가 주어짐
-const n = require('fs').readFileSync('/dev/stdin').toString()
-if (n <= 0) {
-  console.log('1 0');
-} else if (n <= 1) {
-  console.log('0 1');
-} else {
-  console.log('1 2');
+//::TODO 런타임 에러
+const input = require('fs').readFileSync('/dev/stdin').toString().map(Number);
+const T = input.shift();
+
+function fibo(n) {
+  const arr = [1, 1];
+  for (let i = 2; i <= n; i++) {
+    arr[i] = arr[i - 1] + arr[i - 2];
+  }
+  return arr;
+}
+
+for (let i = 0; i < T; i++) {
+  const n = input[i];
+  if (n === 0) {
+    console.log(`1 0`);
+  } else if (n === 1) {
+    console.log(`0 1`);
+  } else {
+    const result = fibo(n);
+    console.log(`${result[n - 2]} ${result[n - 1]}`);
+  }
 }

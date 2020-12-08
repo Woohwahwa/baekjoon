@@ -3,11 +3,14 @@
 */
 
 /* 풀이 */
-const n = require('fs').readFileSync('/dev/stdin').toString()
+const input = require('fs').readFileSync('/dev/stdin').toString()
+const num = parseInt(input);
 
-//::TODO 런타임에러
-let x = n;
-while (x > 1) {
-  x -= 1;
-  console.log(x);
+let output = "";
+
+for (let i = num; i > 0; i--) {
+  output += i + "\n";
 }
+
+console.log(output);
+
