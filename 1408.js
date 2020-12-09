@@ -8,22 +8,17 @@ const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 const start = input[0].split(":");
 const end = input[1].split(":");
 
-const startTime = calcTime(start[0], start[1], start[2]);
-const endTime = calcTime(end[0], end[1], end[2]);
+end[0] -= start[0];
+end[1] -= start[1];
+end[2] -= start[2];
 
-function calcTime(h, m, s) {
-  h = parseInt(h);
-  m = parseInt(m);
-  s = parseInt(s);
-  return h * 3600 + m * 60 + s;
-}
-
-let sec = (endTime - startTime) % 60;
-let min = (endTime - startTime - sec) / 60 % 60;
-let hour = (endTime - startTime - sec - min * 60) / 60 / 60;
+if (end[2] < 0) end[2] += 60; end[1]--;
+if (end[1] < 0) end[1] += 60; end[0]--;
+if (end[0] === -1) end[0] = 0;
 
 function formatTime(t) {
   return t < 10 ? '0' + t : t;
 }
 
-console.log(`${formatTime(hour)}:${formatTime(min)}:${formatTime(sec)}`);
+console.log(`${formatTime(end[0])}:${formatTime(end[1])}:${formatTime(end[2])}`);
+

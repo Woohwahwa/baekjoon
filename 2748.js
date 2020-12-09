@@ -7,15 +7,13 @@
 */
 
 /* 풀이 */
-const input = require('fs').readFileSync('/dev/stdin').toString()
-const num = parseInt(input);
+const input = parseInt(require('fs').readFileSync('/dev/stdin').toString());
+const arr = [0, 1];
 
-function fibo(n) {
-  const arr = [0, 1];
-  for (let i = 2; i <= n; i++) {
-    arr[i] = arr[i - 1] + arr[i - 2];
-  }
+const fibo = (n) => {
+  if (arr[n] === undefined)
+    arr[n] = BigInt(fibo(n - 1)) + BigInt(fibo(n - 2));
   return arr[n];
-}
+};
 
-console.log(fibo(num));
+console.log(fibo(input).toString());

@@ -4,8 +4,8 @@
  책의 가격은 10000이하이다.
 */
 
-const input = require('fs').readFileSync('/dev/stdin').toString().map(Number);
-let T = input.shift();
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+let T = parseInt(input.shift());
 
 for (let i = 0; i < 9; i++) {
   T -= parseInt(input[i]);

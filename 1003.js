@@ -4,8 +4,7 @@
 */
 
 /* 풀이 */
-//::TODO 런타임 에러
-const input = require('fs').readFileSync('/dev/stdin').toString().map(Number);
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n').map(Number);
 const T = input.shift();
 
 function fibo(n) {
