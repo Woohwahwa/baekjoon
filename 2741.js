@@ -5,9 +5,11 @@
 /* 풀이 */
 const n = require('fs').readFileSync('/dev/stdin').toString()
 
-//TODO:: 시간초과로 실패했어요ㅠㅅㅠ
 let x = 0;
+let output = ''
 while (x < n) {
   x++;
-  console.log(x);
+  output += x + '\n';
 }
+
+console.log(output);

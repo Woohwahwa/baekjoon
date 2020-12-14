@@ -23,5 +23,4 @@ function lcm(a, b) {
 resultGCD = gcd(maxN, minN);
 resultLCM = lcm(maxN, minN);
 
-console.log(resultGCD);
-console.log(resultLCM);
+console.log(resultGCD + '\n' + resultLCM);

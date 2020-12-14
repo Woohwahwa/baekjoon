@@ -27,11 +27,10 @@ function getNumber(n, m) {
 
   // false를 받지 않은 수들은 소수이다
   const primeNumber = result.filter(number => number > 0);
-  console.log(Math.min(...primeNumber));
+  if (primeNumber.length) console.log(Math.min(...primeNumber));
 
   // 수가 있는 경우 모두 더해주고, 결과값이 없는 경우는 -1을 리턴한다
   return primeNumber.length ? primeNumber.reduce((a, b) => a + b) : -1;
-
 }
 
 console.log(getNumber(parseInt(m), parseInt(n)));
