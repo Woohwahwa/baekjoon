@@ -7,8 +7,8 @@
 const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 let output = 0;
 
-for (let i = 0; i <= input.length; i++) {
-  output += parseInt(i);
+for (let i = 0; i <= 4; i++) {
+  output += parseInt(input[i]);
 }
 
 console.log(output);
