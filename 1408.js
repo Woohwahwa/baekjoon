@@ -8,9 +8,9 @@ const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 const start = input[0].split(":");
 const end = input[1].split(":");
 
-end[0] -= start[0];
-end[1] -= start[1];
-end[2] -= start[2];
+end[0] -= parseInt(start[0]);
+end[1] -= parseInt(start[1]);
+end[2] -= parseInt(start[2]);
 
 if (end[2] < 0) end[2] += 60; end[1]--;
 if (end[1] < 0) end[1] += 60; end[0]--;
