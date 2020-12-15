@@ -7,7 +7,7 @@ const input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
 const T = input.shift();
 let output = [];
 
-for (let i = 0; i <= 6; i++) {
+for (let i = 0; i <= T; i++) {
   if (T % i === 0) output.push(i)
 }
 
