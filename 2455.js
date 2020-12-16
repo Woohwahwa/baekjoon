@@ -13,9 +13,11 @@ let output = [];
 
 for (let i = 0; i < input.length; i++) {
   const value = input[i].split(' ');
-  sum -= parseInt(value[0])
-  sum += parseInt(value[1])
-  output.push(sum);
+  if (sum > parseInt(value[0]) - parseInt(value[1])) {
+    sum -= parseInt(value[0])
+    sum += parseInt(value[1])
+    output.push(sum);
+  }
 }
 
 console.log(Math.max(...output));
