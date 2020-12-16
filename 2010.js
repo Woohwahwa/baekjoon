@@ -9,6 +9,6 @@
 const input = require('fs').readFileSync('/dev/stdin').toString();
 input.shift();
 
-console.log(Math.max(...input));
+const output = input.map(v => parseInt(v))
 
-
+console.log(Math.max(...output));

@@ -3,7 +3,7 @@
 */
 
 /* 풀이 */
-const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+const input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
 const n = parseInt(input[0]);
 const m = parseInt(input[1]);
 let resultGCD = 0;

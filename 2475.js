@@ -9,4 +9,3 @@ const input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
 
 const arr = input.map(number => Math.pow(parseInt(number), 2));
 console.log(arr.reduce((a, b) => a + b) % 10);
-ㄹ
