@@ -4,10 +4,6 @@
 
 /* 풀이 */
 const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
-let output = [];
-
-output = input.map(number => parseInt(number));
-output.sort((a, b) => a - b);
-const max = output[output.length - 1];
-const count = parseInt(input.findIndex(number => parseInt(number) === max)) + 1;
+const max = Math.max(...input);
+const count = input.findIndex(number => parseInt(number) === max) + 1;
 console.log(max + '\n' + count);

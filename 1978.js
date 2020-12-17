@@ -6,7 +6,7 @@
 const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 const T = input.shift();
 
-const numberArr = input.split(' ');
+const numberArr = input[0].split(' ');
 const resultArr = [];
 
 for (let i = 1; i < T; i++) {

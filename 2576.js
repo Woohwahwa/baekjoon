@@ -5,12 +5,13 @@
 /* 풀이 */
 const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 let output = [];
+let sum = 0;
 
 for (let i = 0; i < 7; i++) {
   if (input[i] % 2 === 1) output.push(parseInt(input[i]))
 }
 
-const sum = output.reduce((a, b) => a + b);
+if (output.length) sum = output.reduce((a, b) => a + b);
 const min = Math.min(...output);
 
 console.log(output.length ? sum + '\n' + min : -1);
