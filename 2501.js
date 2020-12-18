@@ -11,6 +11,8 @@ for (let i = 0; i <= T; i++) {
   if (T % i === 0) output.push(i)
 }
 
-const result = output[input[0] - 1];
-
-console.log(output.length < result ? 0 : result);
+if (output.length >= input[0]) {
+  console.log(output[input[0] - 1]);
+} else {
+  console.log(0);
+}
