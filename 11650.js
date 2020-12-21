@@ -4,8 +4,8 @@
 */
 
 /* 풀이 */
-const [n, ...arr] = require('fs').readFileSync('/dev/stdin').toString().split('\n');
-let output = arr.map(v => v.split(' ').map(str => parseInt(str)));
+const [n, ...arr] = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
+let output = arr.map(v => v.split(' ').map(str => Number(str)));
 let result = '';
 output
   .sort((a, b) => {
@@ -15,8 +15,9 @@ output
       return a[1] - b[1];
     }
   })
-  .forEach(number => {
-  result += `${number[0]} ${number[1]}\n`
-})
+  .forEach((number, index) => {
+    const br = index === output.length - 1 ? '' : '\n';
+    result += `${number[0]} ${number[1]}${br}`
+  })
 
 console.log(result);

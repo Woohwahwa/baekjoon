@@ -13,5 +13,8 @@ for (let i = 0; i < input.length; i++) {
   result.push(input.substr(i))
 }
 
-result.sort().map(v => output += v + '\n');
+result.sort().map((v, index) => {
+  const br = index === result.length - 1 ? '' : '\n';
+  output += v + br;
+});
 console.log(output);
