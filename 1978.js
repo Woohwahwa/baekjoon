@@ -7,37 +7,25 @@ const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 const T = input.shift();
 
 const numberArr = input[0].split(' ');
-const resultArr = [];
+let output = 0;
 
 for (let i = 1; i < T; i++) {
   const number = parseInt(numberArr[i]);
-  // 2와 3인 경우 true 처리
-  if (number > 1 && number < 4) resultArr.push(true)
-
-  // 소수 계산
-  if (number <= 1000) {
-    const result = setNumber(number);
-    if (result) resultArr.push(setNumber(number))
-  } else {
-    return false;
-  }
+  if (isPrime(number)) output += 1;
 }
 
-function setNumber(n) {
-  let result = false;
-  // 제곱근을 계산한 후 다시 루프를 돌린다.
-  for (let i = 2; i * i < n; i++) {
-    for (let j = i * i; j <= n; j += i) {
-      if (j === n) {
-        result = false;
-        break;
-      } else {
-        result = true;
-      }
+console.log(output);
+
+function isPrime(num) {
+  if (num === 1) {
+    return false
+  } else if (num === 2) {
+    return true
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false
     }
   }
-
-  return result
+  return true
 }
-
-console.log(resultArr.length);
