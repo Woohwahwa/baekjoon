@@ -5,15 +5,7 @@
 */
 
 /* 풀이 */
-const [T, ...input] = require('fs').readFileSync('/dev/stdin').toString().split('\n');
-let output = '';
-
-output = input.sort((a, b) => {
-  if (a.length !== b.length) {
-    return a.length - b.length
-  } else {
-    return a.localeCompare(b)
-  }
-})
-
-console.log(output);
+const [T, ...input] = '13\nbut\ni\nwont\nhesitate\nno\nmore\nno\nmore\nit\ncannot\nwait\nim\nyours'.toString().split('\n');
+const output = input.sort((a, b) => a.length - b.length || a.localeCompare(b));
+const result = Array.from(new Set(output));
+console.log(result.join('\n'));
